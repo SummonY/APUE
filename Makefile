@@ -1,15 +1,19 @@
 GXX		:= gcc
 CFLAGS		:= -O2 -Wall -lpthread -fomit-frame-pointer
-INCLUDE_H	:= -I./
+SO		:= libapue.so
+INCLUDE_H	:= -I./ ./$(SO)
 
 SOURCES = $(wildcard *.c, chapter[0-9]*/*.c)
 OBJECTS = $(patsubst %.c, %, $(SOURCES))
 
+
 all : $(OBJECTS)
 
 % : %.c
-	$(GXX) $(CFLAGS) $(INCLUDE_H) $^ -o $@
+	$(GXX) $^ -o $@ $(CFLAGS) $(INCLUDE_H)
 
-.PHONY: clean
+.PHONY: lib, clean
+lib : apue_err.c
+	$(GXX) -fPIC -shared -o $(SO) $^	
 clean:
-	rm $(OBJECTS) all
+	rm $(OBJECTS) $(SO)
