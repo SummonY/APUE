@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
     if (pipe(fd) < 0) {
         err_sys("pipe error");
     }
-    
+    printf("STDOUT_FILENO = %d\n", STDIN_FILENO); 
     if ((pid = fork()) < 0) {
         err_sys("fork error");
     }
