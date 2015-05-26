@@ -13,7 +13,7 @@ all : $(OBJECTS)
 	$(GXX) $^ -o $@ $(CFLAGS) $(INCLUDE_H)
 
 .PHONY: lib, clean
-lib : apue_err.c
+lib : apue_err.c apue.c
 	$(GXX) -fPIC -shared -o $(SO) $^	
 clean:
 	rm $(OBJECTS)
