@@ -16,4 +16,4 @@ all : $(OBJECTS)
 lib : apue_err.c
 	$(GXX) -fPIC -shared -o $(SO) $^	
 clean:
-	rm $(OBJECTS) $(SO)
+	rm $(OBJECTS)
