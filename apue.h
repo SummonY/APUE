@@ -19,5 +19,6 @@ long open_max(void);
 void err_msg(const char *, ...);
 void err_quit(const char *, ...) __attribute__((noreturn));
 void err_sys(const char *, ...) __attribute__((noreturn));
+void err_ret(const char *, ...);
 
 #endif
