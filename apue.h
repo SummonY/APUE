@@ -20,5 +20,9 @@ void err_msg(const char *, ...);
 void err_quit(const char *, ...) __attribute__((noreturn));
 void err_sys(const char *, ...) __attribute__((noreturn));
 void err_ret(const char *, ...);
+void err_exit(int ,const char *, ...) __attribute__((noreturn));
+
+
+
 
 #endif
